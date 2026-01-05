@@ -1,14 +1,8 @@
-/**
- * Telemedicine Nabha - Patient/ASHA Mobile App
- * Simple, offline-first, accessible for rural users
- */
-
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-// Screens
 import LanguageSelectScreen from './src/screens/LanguageSelectScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import AddSymptomsScreen from './src/screens/AddSymptomsScreen';
@@ -16,7 +10,6 @@ import RecordsScreen from './src/screens/RecordsScreen';
 import ConsultationScreen from './src/screens/ConsultationScreen';
 import MedicineScreen from './src/screens/MedicineScreen';
 
-// Services
 import { initDatabase } from './src/services/database';
 import { startBackgroundSync } from './src/services/sync';
 import { useAppStore } from './src/store/appStore';
@@ -27,7 +20,7 @@ export default function App() {
   const language = useAppStore((state) => state.language);
 
   useEffect(() => {
-    // Initialize app
+    
     const init = async () => {
       await initDatabase();
       startBackgroundSync();
